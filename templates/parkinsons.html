@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Prediction</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <style>
+        /* Style for positioning the heading and image */
+        .heading-container {
+            display: flex;
+            align-items: center; /* Center align the items vertically */
+            gap: 10px; /* Space between image and text */
+            justify-content: center;
+        }
+        
+        .heading-container img {
+            width: 40px; /* Set width of the image */
+            height: 40px; /* Set height of the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading-container">
+            <h2>Parkinson's Disease Prediction</h2> 
+            <img src="{{ url_for('static', filename='pill.svg') }}" alt="Healthcare Icon">
+        </div>
+        <form id="predictionForm3" action="/predict_parkinsons" method="POST">
+            <input type="text" name="fo" placeholder="Fo" required>
+            <input type="text" name="fhi" placeholder="Fhi" required>
+            <input type="text" name="flo" placeholder="Flo" required>
+            <input type="text" name="Jitter_percent" placeholder="Jitter Percent" required>
+            <input type="text" name="Jitter_Abs" placeholder="Jitter Abs" required>
+            <input type="text" name="RAP" placeholder="RAP" required>
+            <input type="text" name="PPQ" placeholder="PPQ" required>
+            <input type="text" name="DDP" placeholder="DDP" required>
+            <input type="text" name="Shimmer" placeholder="Shimmer" required>
+            <input type="text" name="Shimmer_dB" placeholder="Shimmer dB" required>
+            <input type="text" name="APQ3" placeholder="APQ3" required>
+            <input type="text" name="APQ5" placeholder="APQ5" required>
+            <input type="text" name="APQ" placeholder="APQ" required>
+            <input type="text" name="DDA" placeholder="DDA" required>
+            <input type="text" name="NHR" placeholder="NHR" required>
+            <input type="text" name="HNR" placeholder="HNR" required>
+            <input type="text" name="RPDE" placeholder="RPDE" required>
+            <input type="text" name="DFA" placeholder="DFA" required>
+            <input type="text" name="spread1" placeholder="Spread 1" required>
+            <input type="text" name="spread2" placeholder="Spread 2" required>
+            <input type="text" name="D2" placeholder="D2" required>
+            <input type="text" name="PPE" placeholder="PPE" required>
+            <!-- <button type="submit">Predict Parkinson's Disease</button> -->
+            <div>
+                <button type="submit">Predict Diabetes</button>
+            </div>
+        </form>
+
+        <div id="resultDiv">
+            {% if parkinsons_result %}
+            <div class="alert alert-info">{{ parkinsons_result }}</div>
+            {% endif %}
+        </div>
+
+        <a href="/">Back to Home</a>
+        <div id="lottie-container" style="width: 11%; height: 10%;"></div>
+    </div>
+
+    <script>
+        var animation = lottie.loadAnimation({
+           container: document.getElementById('lottie-container'),
+           renderer: 'svg',
+           loop: true,
+           autoplay: true,
+           path: '{{ url_for("static", filename="online-health-report.json") }}'                   
+       });
+      </script>
+</body>
+</html>

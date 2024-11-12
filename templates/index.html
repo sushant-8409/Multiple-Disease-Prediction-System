@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Disease Prediction System</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+        
+            <nav class="col-md-3 col-lg-2 d-md-block  sidebar">
+                <div class="sidebar-sticky">
+                    <h4 class="text-white text-center">Disease Prediction</h4>
+                    <hr style="border-color: black;">
+                    <a href="#" id="diabetes-btn"> <i class="bi bi-activity"></i>Diabetes Prediction</a>
+                    <a href="#" id="heart-btn">  <i class="bi bi-heart"></i>Heart Disease Prediction</a>
+                    <a href="#" id="parkinsons-btn">  <i class="bi bi-person"></i> Parkinson's Prediction</a>
+                </div>
+            </nav>
+
+            
+            <main class="col-md-9 ml-sm-auto col-lg-10 content">
+                <div class="container">
+                    <h1>Multiple Disease Prediction System</h1>
+
+                
+                    <div class="form-section" id="diabetes-section" >
+                    
+                        <h2>Diabetes Prediction</h2>
+                        <form id="predictionForm" action="/predict_diabetes" method="POST" >
+                            
+                            <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
+                            <input type="text" name="Glucose" placeholder="Glucose Level" required>
+                            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
+                            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
+                            <input type="text" name="Insulin" placeholder="Insulin Level" required>
+                            <input type="text" name="BMI" placeholder="BMI" required>
+                            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
+                            <input type="text" name="Age" placeholder="Age" required>
+                            <button type="submit" >Predict Diabetes</button>
+                        </form>
+                        <div id="resultDiv">
+                            {% if diab_result %}
+                            <div class="alert alert-info">{{ diab_result }}</div>
+                        {% endif %}
+                        </div>
+                    </div>
+
+
+                     
+                     <div class="form-section" id="heart-section" >
+                        <h2>Heart Disease Prediction</h2>
+                        <form id="predictionForm" action="/predict_heart" method="POST">
+                        
+                            <input type="text" name="age" placeholder="Age" required>
+                            <input type="text" name="sex" placeholder="Sex" required>
+                            <input type="text" name="cp" placeholder="Chest Pain Type (CP)" required>
+                            <input type="text" name="trestbps" placeholder="Resting Blood Pressure (TrestBPS)" required>
+                            <input type="text" name="chol" placeholder="Cholesterol Level (Chol)" required>
+                            <input type="text" name="fbs" placeholder="Fasting Blood Sugar (FBS)" required>
+                            <input type="text" name="restecg" placeholder="Resting ECG Results (RestECG)" required>
+                            <input type="text" name="thalach" placeholder="Max Heart Rate Achieved (Thalach)" required>
+                            <input type="text" name="exang" placeholder="Exercise Induced Angina (Exang)" required>
+                            <input type="text" name="oldpeak" placeholder="ST Depression (Oldpeak)" required>
+                            <input type="text" name="slope" placeholder="Slope of ST Segment" required>
+                            <input type="text" name="ca" placeholder="Number of Major Vessels (CA)" required>
+                            <input type="text" name="thal" placeholder="Thalassemia (Thal)" required>
+                            <button type="submit" >Predict Heart Disease</button>
+                        </form>
+                        <div id="resultDiv">
+                            {% if heart_result %}
+                            <div class="alert alert-info">{{ heart_result }}</div>
+                        {% endif %}
+                        </div>
+                    </div> 
+
+                
+                    <div class="form-section" id="parkinsons-section" style="display: none;">
+                        <h2>Parkinson's Disease Prediction</h2>
+                        <form action="/predict_parkinsons" method="POST">
+                            
+                            <button type="submit">Predict Parkinson's</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('diabetes-section').style.display = 'none';
+    document.getElementById('heart-section').style.display = 'none';
+    document.getElementById('parkinsons-section').style.display = 'none';
+});
+
+        document.getElementById('diabetes-btn').addEventListener('click', function() {
+            document.getElementById('diabetes-section').style.display = 'block';
+            document.getElementById('heart-section').style.display = 'none';
+            document.getElementById('parkinsons-section').style.display = 'none';
+
+        });
+
+        document.getElementById('heart-btn').addEventListener('click', function() {
+            document.getElementById('diabetes-section').style.display = 'none';
+            document.getElementById('heart-section').style.display = 'block';
+            document.getElementById('parkinsons-section').style.display = 'none';
+        });
+
+        document.getElementById('parkinsons-btn').addEventListener('click', function() {
+            document.getElementById('diabetes-section').style.display = 'none';
+            document.getElementById('heart-section').style.display = 'none';
+            document.getElementById('parkinsons-section').style.display = 'block';
+        });
+
+   
+     </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Disease Prediction System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        /* Style for positioning the heading and image */
+        .heading-container {
+            display:flex;
+            align-items: center; /* Center align the items vertically */
+            gap: 10px; /* Space between image and text */
+            justify-content: center;
+        }
+        
+        .heading-container img {
+            width: 55px; /* Set width of the image */
+            height: 55px; /* Set height of the image */
+        }
+    </style>
+      
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <h4 class="text-white text-center">Disease Prediction</h4>
+                    <hr style="border-color: black;">
+                    <a href="/diabetes" id="diabetes-btn"> <i class="bi bi-activity"></i>Diabetes Prediction</a>
+                    <a href="/heart" id="diabetes-btn"> <i class="bi bi-heart"></i>Heart Prediction</a>
+                    <a href="/parkinsons" id="diabetes-btn"> <i class="bi bi-person"></i>Parkinsons Prediction</a>
+                    <!-- Add other links for Heart Disease, Parkinson's -->
+                </div>
+            </nav>
+
+            <main class="col-md-9 ml-sm-auto col-lg-10 content">
+                <div class="container">
+                   
+                    <div class="heading-container">
+                        <h1>Welcome to the Disease Prediction System</h1>
+                        <img src="{{ url_for('static', filename='healthcare.svg') }}" alt="Healthcare Icon">
+                    </div>
+                    
+                    
+                    <div id="typing-text"></div> <!-- Container for typing text -->
+                     
+                    <div id="lottie-container" style="width: 65%; height: 10%;"></div>
+
+    <script>
+
+          // Typing effect
+          const text = "Take care of your body. It’s the only place you have to live.";
+        // const texts = [
+        // "Prevention is better than cure.",
+        // "Take care of your body. It’s the only place you have to live."];
+    
+                        let index = 0;
+                        let repeatCount = 0;
+
+                        function typeText() {
+                            if (repeatCount < 20) { // Adjust this for how many times you want to repeat
+                                if (index < text.length) {
+                                    document.getElementById("typing-text").innerHTML += text.charAt(index);
+                                    index++;
+                                    setTimeout(typeText, 50); // Adjust speed here (50ms)
+                                } else {
+                                    // Add a delay before starting to delete the text
+                                    setTimeout(deleteText, 1000); // Delay before deleting
+                                }
+                            }
+                        }
+
+                        function deleteText() {
+                            if (index > 0) {
+                                document.getElementById("typing-text").innerHTML = text.substring(0, index - 1);
+                                index--;
+                                setTimeout(deleteText, 30); // Adjust speed here (30ms)
+                            } else {
+                                repeatCount++;
+                                setTimeout(typeText, 500); // Delay before starting to type again
+                            }
+                        }
+
+                        // Start typing effect
+                        typeText();
+
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-container'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '{{ url_for("static", filename="preventive-health-care.json") }}'                   
+        });
+    </script>
+               </div>    
+            </main>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

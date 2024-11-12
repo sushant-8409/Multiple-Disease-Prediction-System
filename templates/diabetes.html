@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <style>
+        /* Style for positioning the heading and image */
+        .heading-container {
+            display: flex;
+            align-items: center; /* Center align the items vertically */
+            gap: 10px; /* Space between image and text */
+            justify-content: center;
+        }
+        
+        .heading-container img {
+            width: 40px; /* Set width of the image */
+            height: 35px; /* Set height of the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <h2>Diabetes Prediction</h2> -->
+
+        <div class="heading-container">
+            <h2>Diabetes Prediction</h2>
+            <img src="{{ url_for('static', filename='doctors-case.svg') }}" alt="Healthcare Icon">
+        </div>
+    
+        <form id="predictionForm" action="/predict_diabetes" method="POST">
+            <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
+            <input type="text" name="Glucose" placeholder="Glucose Level" required>
+            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
+            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
+            <input type="text" name="Insulin" placeholder="Insulin Level" required>
+            <input type="text" name="BMI" placeholder="BMI" required>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
+            <input type="text" name="Age" placeholder="Age" required>
+            <!-- <button type="submit">Predict Diabetes</button> -->
+            <div>
+                <button type="submit">Predict Diabetes</button>
+            </div>
+        </form>
+        <!-- <div>
+            <button type="submit">Predict Diabetes</button>
+        </div> -->
+
+        <div id="resultDiv">
+            {% if diab_result %}
+            <div class="alert alert-info">{{ diab_result }}</div>
+            {% endif %}
+        </div>
+
+        <a href="/">Back to Home</a>
+        <div id="lottie-container" style="width: 25%; height: 10%;"></div>
+    </div>
+
+    <script>
+         var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-container'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '{{ url_for("static", filename="online-health-report.json") }}'                   
+        });
+    </script>
+</body>
+</html>

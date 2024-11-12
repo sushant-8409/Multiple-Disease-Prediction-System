@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+</head>
+<style>
+    /* Style for positioning the heading and image */
+    .heading-container {
+        display: flex;
+        align-items: center; /* Center align the items vertically */
+        gap: 10px; /* Space between image and text */
+        justify-content: center;
+    }
+    
+    .heading-container img {
+        width: 40px; /* Set width of the image */
+        height: 40px; /* Set height of the image */
+    }
+</style>
+<body>
+    <!-- <div class="container">
+        <h2>Diabetes Prediction</h2>
+        <form id="predictionForm" action="/predict_diabetes" method="POST">
+            <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
+            <input type="text" name="Glucose" placeholder="Glucose Level" required>
+            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
+            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
+            <input type="text" name="Insulin" placeholder="Insulin Level" required>
+            <input type="text" name="BMI" placeholder="BMI" required>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
+            <input type="text" name="Age" placeholder="Age" required>
+            <button type="submit">Predict Diabetes</button>
+        </form>
+
+        <div id="resultDiv">
+            {% if diab_result %}
+            <div class="alert alert-info">{{ diab_result }}</div>
+            {% endif %}
+        </div> -->
+
+
+        
+        <div class="form-section" id="heart-section" >
+          
+          <div class="heading-container">
+            <h2>Heart Disease Prediction</h2>
+            <img src="{{ url_for('static', filename='heart-hospital.svg') }}" alt="Healthcare Icon">
+        </div>
+          <form id="predictionForm" action="/predict_heart" method="POST">
+          
+              <input type="text" name="age" placeholder="Age" required>
+              <input type="text" name="sex" placeholder="Sex" required>
+              <input type="text" name="cp" placeholder="Chest Pain Type (CP)" required>
+              <input type="text" name="trestbps" placeholder="Resting Blood Pressure (TrestBPS)" required>
+              <input type="text" name="chol" placeholder="Cholesterol Level (Chol)" required>
+              <input type="text" name="fbs" placeholder="Fasting Blood Sugar (FBS)" required>
+              <input type="text" name="restecg" placeholder="Resting ECG Results (RestECG)" required>
+              <input type="text" name="thalach" placeholder="Max Heart Rate Achieved (Thalach)" required>
+              <input type="text" name="exang" placeholder="Exercise Induced Angina (Exang)" required>
+              <input type="text" name="oldpeak" placeholder="ST Depression (Oldpeak)" required>
+              <input type="text" name="slope" placeholder="Slope of ST Segment" required>
+              <input type="text" name="ca" placeholder="Number of Major Vessels (CA)" required>
+              <input type="text" name="thal" placeholder="Thalassemia (Thal)" required>
+              <!-- <button type="submit" >Predict Heart Disease</button> -->
+              <div>
+                <button type="submit">Predict Diabetes</button>
+            </div>
+          </form>
+          <!-- <div>
+            <button type="submit">Predict Diabetes</button>
+        </div> -->
+          <div id="resultDiv">
+              {% if heart_result %}
+              <div class="alert alert-info">{{ heart_result }}</div>
+          {% endif %}
+          </div>
+      </div> 
+
+        <a href="/">Back to Home</a>
+        <div id="lottie-container" style="width: 5%; height: 10%;"></div>
+    </div>
+   <script>
+     var animation = lottie.loadAnimation({
+        container: document.getElementById('lottie-container'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="online-health-report.json") }}'                   
+    });
+   </script>
+</body>
+</html>
