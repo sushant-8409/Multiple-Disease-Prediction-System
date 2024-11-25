@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Information</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Additional styling for layout */
+        .heading-container {
+            display: flex;
+            align-items: center; /* Center align the items vertically */
+            gap: 10px; /* Space between image and text */
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .heading-container img {
+            width: 40px; /* Set width of the image */
+            height: 35px; /* Set height of the image */
+        }
+
+        .content-container {
+            padding: 20px;
+        }
+
+        .attribute-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .attribute-list li {
+            margin-bottom: 10px;
+        }
+        .container{
+            background-color: #f4f7f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <!-- Header -->
+        <div class="heading-container">
+            <h2>Diabetes Dataset Information</h2>
+            <img src="{{ url_for('static', filename='healthcare.svg') }}" alt="Dataset Icon">
+            
+        </div>
+
+        <!-- Dataset Information -->
+        <div class="content-container">
+            <h3>Diabetes Data Set Information</h3>
+            <p>
+                This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective is to predict based on diagnostic measurements whether a patient has diabetes.Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage.
+            </p>
+
+            <h3>Attribute Information</h3>
+            <ul class="attribute-list">
+                <li><strong>Pregnancies:</strong> Number of times pregnant (0 - 15)</li>
+                <li><strong>Glucose:</strong> Plasma glucose concentration a 2 hours in an oral glucose tolerance test (0 - 119)</li>
+                <li><strong>BloodPressure:</strong> Diastolic blood pressure (mm Hg) (0 - 12 & 24 - 122)</li>
+                <li><strong>SkinThickness:</strong> Triceps skin fold thickness (mm) (0 - 60)</li>
+                <li><strong>Insulin:</strong> 2-Hour serum insulin (mu U/ml) (0 - 338)</li>
+                <li><strong>BMI:</strong> Body mass index (weight in kg/(height in m)^2) (0 - 53)</li>
+                <li><strong>DiabetesPedigreeFunction:</strong> Diabetes pedigree function (0 - 1.5)</li>
+                <li><strong>Age:</strong> Age (years) (21 - 69)</li>
+            </ul>
+        </div>
+
+         
+        <div>
+            <a href="{{ url_for('diabetes_page') }}" class="button-index">Back to Diabetes Form</a> 
+            <!-- <a href="/parkinsons" class="button-index">Back to Parkinsons Form</a> -->
+        </div>
+      
+
+
+        <div class="container">
+            <!-- Header -->
+            <div class="heading-container">
+                <h2>Heart Disease Dataset Information</h2>
+                <img src="{{ url_for('static', filename='healthcare.svg') }}" alt="Healthcare Icon">
+            </div>
+    
+            <!-- Dataset Information -->
+            <div class="content-container">
+                <h3>Data Set Information</h3>
+                <p>
+                    This data set dates from 1988 and consists of four databases: Cleveland, Hungary, Switzerland, and Long Beach V. It contains 76 attributes, including the predicted attribute, but all published experiments refer to using a subset of 14 of them. The "target" field refers to the presence of heart disease in the patient. It is integer valued 0 = no disease and 1 = disease.
+                </p>
+    
+                <h3>Attribute Information</h3>
+                <ul class="attribute-list">
+                    <li><strong>age:</strong> Age of the patient (29 - 77)</li>
+                <li><strong>sex:</strong> Gender of the patient (0 = female, 1 = male)</li>
+                <li><strong>chest pain type:</strong> Type of chest pain (0 - 3)</li>
+                <li><strong>resting blood pressure:</strong> Resting blood pressure (in mm Hg) (94 - 200)</li>
+                <li><strong>serum cholestoral:</strong> Serum cholesterol in mg/dl (126 - 564)</li>
+                <li><strong>fasting blood sugar:</strong> Fasting blood sugar > 120 mg/dl (1 = true, 0 = false)</li>
+                <li><strong>resting electrocardiographic results:</strong> Resting ECG results (0-2)</li>
+                <li><strong>maximum heart rate achieved:</strong> Maximum heart rate during exercise (71 - 202)</li>
+                <li><strong>exercise induced angina:</strong> Exercise-induced angina (1 = yes, 0 = no)</li>
+                <li><strong>oldpeak:</strong> ST depression induced by exercise relative to rest (0 - 6.2)</li>
+                <li><strong>slope:</strong> Slope of the peak exercise ST segment (0 - 2)</li>
+                <li><strong>number of major vessels:</strong> Number of major vessels (0-4) colored by fluoroscopy</li>
+                <li><strong>thal:</strong> Thalassemia status (0 = normal, 1 = fixed defect, 2 = reversible defect) (0 - 3)</li>
+                </ul>
+            </div>
+    
+             
+            <div>
+                <a href="{{ url_for('heart_page') }}" class="button-index">Back to Heart Prediction Form</a> 
+                <!-- <a href="/parkinsons" class="button-index">Back to Parkinsons Form</a> -->
+            </div>
+
+
+        <div class="container">
+            <!-- Header -->
+            <div class="heading-container">
+                <h2>Parkinson's Dataset Information</h2>
+                <img src="{{ url_for('static', filename='healthcare.svg') }}" alt="Healthcare Icon">
+            </div>
+    
+            <!-- Dataset Information -->
+            <div class="content-container">
+                <h3>Data Set Information</h3>
+                <p>
+                    This dataset is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). 
+                    Each column in the table is a particular voice measure, and each row corresponds to one of 195 voice recordings from 
+                    these individuals ("name" column). The main aim of the data is to discriminate healthy people from those with PD, 
+                    according to the "status" column which is set to 0 for healthy and 1 for PD.
+                </p>
+    
+                <h3>Attribute Information</h3>
+                <ul class="attribute-list">
+                    
+                    <li><strong>MDVP:Fo(Hz)</strong> - Average vocal fundamental frequency</li>
+                    <li><strong>MDVP:Fhi(Hz)</strong> - Maximum vocal fundamental frequency</li>
+                    <li><strong>MDVP:Flo(Hz)</strong> - Minimum vocal fundamental frequency</li>
+                    <li><strong>MDVP:Jitter(%), MDVP:Jitter(Abs), MDVP:RAP, MDVP:PPQ, Jitter:DDP</strong> - Measures of variation in fundamental frequency</li>
+                    <li><strong>MDVP:Shimmer, MDVP:Shimmer(dB), Shimmer:APQ3, Shimmer:APQ5, MDVP:APQ, Shimmer:DDA</strong> - Measures of variation in amplitude</li>
+                    <li><strong>NHR, HNR</strong> - Measures of noise-to-tonal components in the voice</li>
+                    <li><strong>status</strong> - Health status of the subject (1 = Parkinson's, 0 = healthy)</li>
+                    <li><strong>RPDE, D2</strong> - Nonlinear dynamical complexity measures</li>
+                    <li><strong>DFA</strong> - Signal fractal scaling exponent</li>
+                    <li><strong>spread1, spread2, PPE</strong> - Nonlinear measures of fundamental frequency variation</li>
+                </ul>
+            </div>
+    
+             
+            <div>
+                <a href="{{ url_for('parkinsons_page') }}" class="button-index">Back to Parkinsons Form</a> 
+                <!-- <a href="/parkinsons" class="button-index">Back to Parkinsons Form</a> -->
+            </div>
+      
+    </div>
+</body>
+</html>

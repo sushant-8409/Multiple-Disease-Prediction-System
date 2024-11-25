@@ -53,9 +53,11 @@
             <input type="text" name="spread2" placeholder="Spread 2" required>
             <input type="text" name="D2" placeholder="D2" required>
             <input type="text" name="PPE" placeholder="PPE" required>
+
+            
             <!-- <button type="submit">Predict Parkinson's Disease</button> -->
             <div>
-                <button type="submit">Predict Diabetes</button>
+                <button type="submit">Predict Parkinson's</button>
             </div>
         </form>
 
@@ -66,6 +68,9 @@
         </div>
 
         <a href="/">Back to Home</a>
+        <div>
+        <a href="{{ url_for('info') }}" class="button-index">View Input Details</a> 
+    </div>
         <div id="lottie-container" style="width: 11%; height: 10%;"></div>
     </div>
 
@@ -78,5 +83,77 @@
            path: '{{ url_for("static", filename="online-health-report.json") }}'                   
        });
       </script>
+      
 </body>
 </html>
+
+<!-- 
+<form id="predictionForm3" action="/predict_parkinsons" method="POST">
+    <label for="fo">Fo</label>
+    <input type="number" id="fo" name="fo" placeholder="88.333 to 260.105" min="88.333" max="260.105" required>
+    
+    <label for="fhi">Fhi</label>
+    <input type="number" id="fhi" name="fhi" placeholder="102.145 to 592.03" min="102.145" max="592.03" required>
+    
+    <label for="flo">Flo</label>
+    <input type="number" id="flo" name="flo" placeholder="65.476 to 239.17" min="65.476" max="239.17" required>
+    
+    <label for="Jitter_percent">Jitter Percent</label>
+    <input type="number" id="Jitter_percent" name="Jitter_percent" placeholder="0.001 to 0.02" min="0.001" max="0.02" required>
+    
+    <label for="Jitter_Abs">Jitter Abs</label>
+    <input type="number" id="Jitter_Abs" name="Jitter_Abs" placeholder="0.00001 to 0.0002" min="0.00001" max="0.0002" required>
+    
+    <label for="RAP">RAP</label>
+    <input type="number" id="RAP" name="RAP" placeholder="0.001 to 0.03" min="0.001" max="0.03" required>
+    
+    <label for="PPQ">PPQ</label>
+    <input type="number" id="PPQ" name="PPQ" placeholder="0.001 to 0.02" min="0.001" max="0.02" required>
+    
+    <label for="DDP">DDP</label>
+    <input type="number" id="DDP" name="DDP" placeholder="0.003 to 0.09" min="0.003" max="0.09" required>
+    
+    <label for="Shimmer">Shimmer</label>
+    <input type="number" id="Shimmer" name="Shimmer" placeholder="0.01 to 0.2" min="0.01" max="0.2" required>
+    
+    <label for="Shimmer_dB">Shimmer dB</label>
+    <input type="number" id="Shimmer_dB" name="Shimmer_dB" placeholder="0.1 to 1.5" min="0.1" max="1.5" required>
+    
+    <label for="APQ3">APQ3</label>
+    <input type="number" id="APQ3" name="APQ3" placeholder="0.005 to 0.07" min="0.005" max="0.07" required>
+    
+    <label for="APQ5">APQ5</label>
+    <input type="number" id="APQ5" name="APQ5" placeholder="0.005 to 0.1" min="0.005" max="0.1" required>
+    
+    <label for="APQ">APQ</label>
+    <input type="number" id="APQ" name="APQ" placeholder="0.01 to 0.15" min="0.01" max="0.15" required>
+    
+    <label for="DDA">DDA</label>
+    <input type="number" id="DDA" name="DDA" placeholder="0.005 to 0.1" min="0.005" max="0.1" required>
+    
+    <label for="NHR">NHR</label>
+    <input type="number" id="NHR" name="NHR" placeholder="0.01 to 0.15" min="0.01" max="0.15" required>
+    
+    <label for="HNR">HNR</label>
+    <input type="number" id="HNR" name="HNR" placeholder="10 to 40" min="10" max="40" required>
+    
+    <label for="RPDE">RPDE</label>
+    <input type="number" id="RPDE" name="RPDE" placeholder="0.1 to 0.6" min="0.1" max="0.6" required>
+    
+    <label for="DFA">DFA</label>
+    <input type="number" id="DFA" name="DFA" placeholder="0.5 to 0.9" min="0.5" max="0.9" required>
+    
+    <label for="spread1">Spread 1</label>
+    <input type="number" id="spread1" name="spread1" placeholder="-6 to 1" min="-6" max="1" required>
+    
+    <label for="spread2">Spread 2</label>
+    <input type="number" id="spread2" name="spread2" placeholder="0 to 7" min="0" max="7" required>
+    
+    <label for="D2">D2</label>
+    <input type="number" id="D2" name="D2" placeholder="1 to 5" min="1" max="5" required>
+    
+    <label for="PPE">PPE</label>
+    <input type="number" id="PPE" name="PPE" placeholder="0.1 to 0.5" min="0.1" max="0.5" required>
+    
+    <button type="submit">Submit</button>
+</form> -->

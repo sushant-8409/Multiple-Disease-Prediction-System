@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diabetes Prediction</title>
+    <title>Heart Disease Prediction</title>
     
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
               <input type="text" name="thal" placeholder="Thalassemia (Thal)" required>
               <!-- <button type="submit" >Predict Heart Disease</button> -->
               <div>
-                <button type="submit">Predict Diabetes</button>
+                <button type="submit">Predict Heart Disease</button>
             </div>
           </form>
           <!-- <div>
@@ -84,6 +84,9 @@
       </div> 
 
         <a href="/">Back to Home</a>
+        <div>
+            <a href="{{ url_for('info') }}" class="button-index">View Input Details</a> 
+        </div>
         <div id="lottie-container" style="width: 5%; height: 10%;"></div>
     </div>
    <script>

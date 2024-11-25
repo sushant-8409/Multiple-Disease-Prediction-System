@@ -179,11 +179,15 @@
                         <h1>Welcome to the Disease Prediction System</h1>
                         <img src="{{ url_for('static', filename='healthcare.svg') }}" alt="Healthcare Icon">
                     </div>
+    
                     
                     
                     <div id="typing-text"></div> <!-- Container for typing text -->
                      
                     <div id="lottie-container" style="width: 65%; height: 10%;"></div>
+
+                    
+
 
     <script>
 
@@ -230,11 +234,16 @@
             autoplay: true,
             path: '{{ url_for("static", filename="preventive-health-care.json") }}'                   
         });
+
+        
+        
     </script>
+
                </div>    
             </main>
         </div>
     </div>
+    
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

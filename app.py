@@ -76,5 +76,11 @@ def predict_parkinsons():
     
     return render_template('parkinsons.html', parkinsons_result=result)
 
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
