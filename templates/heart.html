@@ -25,27 +25,7 @@
     }
 </style>
 <body>
-    <!-- <div class="container">
-        <h2>Diabetes Prediction</h2>
-        <form id="predictionForm" action="/predict_diabetes" method="POST">
-            <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
-            <input type="text" name="Glucose" placeholder="Glucose Level" required>
-            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
-            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
-            <input type="text" name="Insulin" placeholder="Insulin Level" required>
-            <input type="text" name="BMI" placeholder="BMI" required>
-            <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
-            <input type="text" name="Age" placeholder="Age" required>
-            <button type="submit">Predict Diabetes</button>
-        </form>
-
-        <div id="resultDiv">
-            {% if diab_result %}
-            <div class="alert alert-info">{{ diab_result }}</div>
-            {% endif %}
-        </div> -->
-
-
+   
         
         <div class="form-section" id="heart-section" >
           
@@ -54,20 +34,126 @@
             <img src="{{ url_for('static', filename='heart-hospital.svg') }}" alt="Healthcare Icon">
         </div>
           <form id="predictionForm" action="/predict_heart" method="POST">
-          
-              <input type="text" name="age" placeholder="Age" required>
-              <input type="text" name="sex" placeholder="Sex" required>
-              <input type="text" name="cp" placeholder="Chest Pain Type (CP)" required>
-              <input type="text" name="trestbps" placeholder="Resting Blood Pressure (TrestBPS)" required>
-              <input type="text" name="chol" placeholder="Cholesterol Level (Chol)" required>
-              <input type="text" name="fbs" placeholder="Fasting Blood Sugar (FBS)" required>
-              <input type="text" name="restecg" placeholder="Resting ECG Results (RestECG)" required>
-              <input type="text" name="thalach" placeholder="Max Heart Rate Achieved (Thalach)" required>
-              <input type="text" name="exang" placeholder="Exercise Induced Angina (Exang)" required>
-              <input type="text" name="oldpeak" placeholder="ST Depression (Oldpeak)" required>
-              <input type="text" name="slope" placeholder="Slope of ST Segment" required>
-              <input type="text" name="ca" placeholder="Number of Major Vessels (CA)" required>
-              <input type="text" name="thal" placeholder="Thalassemia (Thal)" required>
+ 
+
+
+  <!-- Categorical Inputs as Dropdowns -->
+  <div>
+    <label for="cp">Chest Pain Type (CP)</label>
+    <select id="cp" name="cp" required>
+      <option value="" disabled selected></option>
+      <option value="0">Typical Angina</option>
+      <option value="1">Atypical Angina</option>
+      <option value="2">Non-Anginal Pain</option>
+      <option value="3">Asymptomatic</option>
+    </select>
+  </div>
+
+<div>
+  <label for="fbs">Fasting Blood Sugar (FBS)</label>
+  <select id="fbs" name="fbs" required>
+    <option value="" disabled selected></option>
+    <option value="0">≤ 120 mg/dl</option>
+    <option value="1">> 120 mg/dl</option>
+  </select>
+</div>
+
+<div>
+  <label for="sex">Sex (Gender)</label>
+  <select id="sex" name="sex" required>
+    <option value="" disabled selected></option>
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+  </select>
+</div>
+
+<div>
+  <label for="restecg">Resting ECG Results (RestECG)</label>
+  <select id="restecg" name="restecg" required>
+    <option value="" disabled selected></option>
+    <option value="0">Normal</option>
+    <option value="1">ST-T Wave Abnormality</option>
+    <option value="2">Left Ventricular Hypertrophy</option>
+  </select>
+</div>
+
+<div>
+  <label for="exang">Exercise Induced Angina (Exang)</label>
+  <select id="exang" name="exang" required>
+    <option value="" disabled selected></option>
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+  </select>
+</div>
+
+<div>
+  <label for="slope">Slope of ST Segment (Slope)</label>
+  <select id="slope" name="slope" required>
+    <option value="" disabled selected></option>
+    <option value="0">Upsloping</option>
+    <option value="1">Flat</option>
+    <option value="2">Downsloping</option>
+  </select>
+</div>
+
+<div>
+  <label for="ca">Number of Major Vessels (CA)</label>
+  <select id="ca" name="ca" required>
+    <option value="" disabled selected></option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+</div>
+
+<div>
+  <label for="thal">Thalassemia (Thal)</label>
+  <select id="thal" name="thal" required>
+    <option value="" disabled selected></option>
+    <option value="0">Normal</option>
+    <option value="1">Fixed Defect</option>
+    <option value="2">Reversible Defect</option>
+  </select>
+</div>
+
+  
+
+   <!-- Numeric Inputs -->
+   <!-- <input type="number" name="age" placeholder="Age"  required>
+   <input type="number" name="trestbps" placeholder="Resting Blood Pressure (TrestBPS)" step="0.01" required>
+   <input type="number" name="chol" placeholder="Cholesterol Level (Chol)" step="0.01" required>
+   <input type="number" name="oldpeak" placeholder="ST Depression (Oldpeak)" step="0.01" required>
+   <input type="number" name="thalach" placeholder="Max Heart Rate Achieved (Thalach)" step="0.01" required> -->
+   
+   <div>
+    <label for="thalach">Max Heart Rate Achieved (Thalach)</label>
+    <input type="number" id="thalach" name="thalach"  step="0.01" required>
+  </div>
+  
+  <div>
+    <label for="trestbps">Resting Blood Pressure (TrestBPS)</label>
+    <input type="number" id="trestbps" name="trestbps"  step="0.01" required>
+  </div>
+  
+  <div>
+    <label for="chol">Cholesterol Level (Chol)</label>
+    <input type="number" id="chol" name="chol"  step="0.01" required>
+  </div>
+  
+  <div>
+    <label for="oldpeak">ST Depression (Oldpeak)</label>
+    <input type="number" id="oldpeak" name="oldpeak"  step="0.01" required>
+  </div>
+
+  <div>
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age"  required>
+  </div>
+  
+ 
+  
+
               <!-- <button type="submit" >Predict Heart Disease</button> -->
               <div>
                 <button type="submit">Predict Heart Disease</button>
@@ -100,3 +186,18 @@
    </script>
 </body>
 </html>
+
+<!-- 
+<input type="text" name="age" placeholder="Age" required>
+<input type="text" name="sex" placeholder="Sex" required>
+<input type="text" name="cp" placeholder="Chest Pain Type (CP)" required>
+<input type="text" name="trestbps" placeholder="Resting Blood Pressure (TrestBPS)" required>
+<input type="text" name="chol" placeholder="Cholesterol Level (Chol)" required>
+<input type="text" name="fbs" placeholder="Fasting Blood Sugar (FBS)" required>
+<input type="text" name="restecg" placeholder="Resting ECG Results (RestECG)" required>
+<input type="text" name="thalach" placeholder="Max Heart Rate Achieved (Thalach)" required>
+<input type="text" name="exang" placeholder="Exercise Induced Angina (Exang)" required>
+<input type="text" name="oldpeak" placeholder="ST Depression (Oldpeak)" required>
+<input type="text" name="slope" placeholder="Slope of ST Segment" required>
+<input type="text" name="ca" placeholder="Number of Major Vessels (CA)" required>
+<input type="text" name="thal" placeholder="Thalassemia (Thal)" required> -->

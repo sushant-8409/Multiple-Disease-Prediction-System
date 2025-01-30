@@ -34,14 +34,56 @@
         </div>
     
         <form id="predictionForm" action="/predict_diabetes" method="POST">
-            <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
+            <!-- <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
             <input type="text" name="Glucose" placeholder="Glucose Level" required>
             <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
             <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
             <input type="text" name="Insulin" placeholder="Insulin Level" required>
             <input type="text" name="BMI" placeholder="BMI" required>
             <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
-            <input type="text" name="Age" placeholder="Age" required>
+            <input type="text" name="Age" placeholder="Age" required> -->
+
+
+            <div>
+                <label for="Pregnancies">No. of Pregnancies</label>
+                <input type="text" id="Pregnancies" name="Pregnancies"  required>
+              </div>
+              
+              <div>
+                <label for="Glucose">Glucose Level</label>
+                <input type="text" id="Glucose" name="Glucose" required>
+              </div>
+              
+              <div>
+                <label for="BloodPressure">Blood Pressure</label>
+                <input type="text" id="BloodPressure" name="BloodPressure" required>
+              </div>
+              
+              <div>
+                <label for="SkinThickness">Skin Thickness</label>
+                <input type="text" id="SkinThickness" name="SkinThickness" required>
+              </div>
+              
+              <div>
+                <label for="Insulin">Insulin Level</label>
+                <input type="text" id="Insulin" name="Insulin" required>
+              </div>
+              
+              <div>
+                <label for="BMI">BMI</label>
+                <input type="text" id="BMI" name="BMI"  required>
+              </div>
+              
+              <div>
+                <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+                <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction"required>
+              </div>
+              
+              <div>
+                <label for="Age">Age</label>
+                <input type="text" id="Age" name="Age" required>
+              </div>
+              
             <!-- <button type="submit">Predict Diabetes</button> -->
             <div>
                 <button type="submit">Predict Diabetes</button>

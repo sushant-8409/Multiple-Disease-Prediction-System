@@ -31,7 +31,7 @@
             <img src="{{ url_for('static', filename='pill.svg') }}" alt="Healthcare Icon">
         </div>
         <form id="predictionForm3" action="/predict_parkinsons" method="POST">
-            <input type="text" name="fo" placeholder="Fo" required>
+            <!-- <input type="text" name="fo" placeholder="Fo" required>
             <input type="text" name="fhi" placeholder="Fhi" required>
             <input type="text" name="flo" placeholder="Flo" required>
             <input type="text" name="Jitter_percent" placeholder="Jitter Percent" required>
@@ -52,7 +52,98 @@
             <input type="text" name="spread1" placeholder="Spread 1" required>
             <input type="text" name="spread2" placeholder="Spread 2" required>
             <input type="text" name="D2" placeholder="D2" required>
-            <input type="text" name="PPE" placeholder="PPE" required>
+            <input type="text" name="PPE" placeholder="PPE" required> -->
+
+
+            <div>
+                <label for="fo">Fo</label>
+                <input type="number" id="fo" name="fo" required>
+            </div>
+            <div>
+                <label for="fhi">Fhi</label>
+                <input type="number" id="fhi" name="fhi"  required>
+            </div>
+            <div>
+                <label for="flo">Flo</label>
+                <input type="number" id="flo" name="flo" required>
+            </div>
+            <div>
+                <label for="jitter_percent">Jitter Percent</label>
+                <input type="number" id="jitter_percent" name="Jitter_percent"  required>
+            </div>
+            <div>
+                <label for="jitter_abs">Jitter Abs</label>
+                <input type="number" id="jitter_abs" name="Jitter_Abs"  required>
+            </div>
+            <div>
+                <label for="rap">RAP</label>
+                <input type="number" id="rap" name="RAP"  required>
+            </div>
+            <div>
+                <label for="ppq">PPQ</label>
+                <input type="number" id="ppq" name="PPQ" required>
+            </div>
+            <div>
+                <label for="ddp">DDP</label>
+                <input type="number" id="ddp" name="DDP" required>
+            </div>
+            <div>
+                <label for="shimmer">Shimmer</label>
+                <input type="number" id="shimmer" name="Shimmer" required>
+            </div>
+            <div>
+                <label for="shimmer_db">Shimmer dB</label>
+                <input type="number" id="shimmer_db" name="Shimmer_dB"  required>
+            </div>
+            <div>
+                <label for="apq3">APQ3</label>
+                <input type="number" id="apq3" name="APQ3"  required>
+            </div>
+            <div>
+                <label for="apq5">APQ5</label>
+                <input type="number" id="apq5" name="APQ5"  required>
+            </div>
+            <div>
+                <label for="apq">APQ</label>
+                <input type="number" id="apq" name="APQ" required>
+            </div>
+            <div>
+                <label for="dda">DDA</label>
+                <input type="number" id="dda" name="DDA" required>
+            </div>
+            <div>
+                <label for="nhr">NHR</label>
+                <input type="number" id="nhr" name="NHR" required>
+            </div>
+            <div>
+                <label for="hnr">HNR</label>
+                <input type="number" id="hnr" name="HNR" required>
+            </div>
+            <div>
+                <label for="rpde">RPDE</label>
+                <input type="number" id="rpde" name="RPDE" required>
+            </div>
+            <div>
+                <label for="dfa">DFA</label>
+                <input type="number" id="dfa" name="DFA"  required>
+            </div>
+            <div>
+                <label for="spread1">Spread 1</label>
+                <input type="number" id="spread1" name="spread1"  required>
+            </div>
+            <div>
+                <label for="spread2">Spread 2</label>
+                <input type="number" id="spread2" name="spread2"  required>
+            </div>
+            <div>
+                <label for="d2">D2</label>
+                <input type="number" id="d2" name="D2" required>
+            </div>
+            <div>
+                <label for="ppe">PPE</label>
+                <input type="number" id="ppe" name="PPE"  required>
+            </div>
+            
 
             
             <!-- <button type="submit">Predict Parkinson's Disease</button> -->
